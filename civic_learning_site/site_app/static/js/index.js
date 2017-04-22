@@ -10,11 +10,4 @@ $(document).ready(function() {
       }
     });
 
-    $("zip-submit").click(function() {
-      alert("asd");
-      console.log("asdf");
-      console.log($("zipcode-input").val());
-
-    });
-
   });

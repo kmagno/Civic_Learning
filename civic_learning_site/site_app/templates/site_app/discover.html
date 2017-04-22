@@ -1,3 +1,139 @@
-<div>
-    {{results}}
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Civic Learning</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <!--<link href="css/stylish-portfolio.css" rel="stylesheet">-->
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="{% static 'css/stylish-portfolio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/discover.css' %}">
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="top" class="header">
+    <div class="text-center">
+      <h1 id="header-title">What matters to you?</h1>
+      <section>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th> <a href="#" class="btn btn-light" onclick="fillInEducation();">Education </a></th>
+          <th><a href="#" class="btn btn-light">Environment</a></th>
+          <th><a href="#" class="btn btn-light">Health</a></th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>State Jurisdiction</td>
+          <td class="additionalInfo ed">State colleges, financial aid, public school curriculums</td>
+          <td class="additionalInfo">TO FILL IN</td>
+          <td class="additionalInfo">TO FILL IN</td>
+        </tr>
+
+      <tr>
+        <td>Local Jurisdiction</td>
+
+        <td class="additionalInfo ed" onclick="fillInEducationLocal();">Inclusive public schools, diversity</td>
+        <td class="additionalInfo">TO FILL IN</td>
+        <td class="additionalInfo">TO FILL IN</td>
+      </tr>
+
+      </tbody>
+
+      <tfoot>
+      </tfoot>
+
+    </table>
+    </section>
+      <!--  {{results}}-->
+
+<div class="wrapper cards additionalInfo legislator-card">
+   <div class="container">
+    <div class="card">
+      <div class="front">
+        <h2>Tito Jackson</h2>
+        <h3>Education Committee Chair </h3>
+        <img id="bio-picture" src="../../../static/img/jackson.jpg">
+        <h4>TITO.JACKSON@BOSTON.GOV</h4>
+       <h5>1 CITY HALL SQUARE<br>
+        SUITE 550<br>
+        BOSTON, MA 02201-2043<br>
+        UNITED STATES</h5>
+          <h5>Elected: 2011 </h5>
+      </div>
+      <div class="back">
+        <div class="content">
+          <h3 class="cardTitle">Tell Tito your concerns!</h3>
+
+          <form>
+            <div class="formItem">
+              <label>Name</label>
+              <input type="text" name="Name" value="Name" />
+            </div>
+            <div class="formItem">
+              <label>Email</label>
+              <input type="password" name="Password" value="Password" />
+            </div>
+            <div class="formItem">
+              <label>Body</label>
+              <input type="text" name="Name" value="Name" />
+            </div>
+            <button class="btnSend">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+    </div>
+  </header>
+  <!-- jQuery -->
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script>
+  function fillInEducation() {
+    $('.ed').show();
+  }
+
+  function fillInEducationLocal() {
+    $('.legislator-card').show();
+  }
+
+  $('.card').click(function(){
+  $(this).toggleClass('flipped');
+});
+  </script>
+
+</body>
