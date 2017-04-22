@@ -1,0 +1,9 @@
+#map {
+  width: 600px;
+  height: 400px;
+}
+
+#confirm-button {
+  display: none;
+  background-color: blue;
+}
