@@ -84,7 +84,7 @@
                     <div id="map" class="col-lg-offset-3"></div>
                     <div><h3 id="clicked-state"> </h3></div>
                     <br>
-                      <a id="confirm-button" href="#local-state" class="btn btn-dark btn-lg">Yes!</a>
+                      <a id="confirm-button" href="#state-data" class="btn btn-dark btn-lg">Yes!</a>
 
                 </div>
 
@@ -98,7 +98,7 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="local-state" class="services bg-primary">
+    <section id="state-data" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -162,16 +162,35 @@
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
+
             <div class="form-group">
               <label for="zipcode-input" class="col-form-label">Zip Code?</label> <br>
               <div class="col-lg-3">
-                <input class="form-control" type="text" placeholder="08003" id="zipcode-input">
+                <input class="form-control" type="text" placeholder="08003" id="zipcode-input" onchange="zipChanged(this);">
               </div>
+                <a href="#local-data" class="btn btn-light">Next</a>
+
             </div>
             <!-- /.row -->
         </div>
         <!-- /.container -->
 
+    </section>
+
+    <!-- About -->
+    <section id="local-data" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 id="local-data-header">Did you know this about your zip code?</h2>
+                    <p>local data info here</p>
+                    <a href="/discover?zip=08003" class="btn btn-dark" id="discover-link">Explore!</a>
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
     </section>
 
     <!-- Footer -->
@@ -225,6 +244,12 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
+    function zipChanged(event) {
+      var zipcode = $('#zipcode-input').val();
+      $('#local-data-header').text("Did you know this about zip code " + zipcode + "?");
+      document.getElementById('discover-link').href="/discover?zip=" + zipcode;
+    }
+
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
         e.preventDefault();
