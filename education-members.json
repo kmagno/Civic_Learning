@@ -1,1 +1,4 @@
-{"name": ["Tito Jackson", "Annissa Essaibi George", "Michael Flaherty", "Timothy McCarthy", "Matt O'Malley"]}
+{
+  "Committee chair": ["Tito Jackson"],
+  "Vice chair" : ["Annissa Essaibi George"],
+ "memebers": [ "Michael Flaherty", "Timothy McCarthy", "Matt O'Malley"]}

@@ -2,10 +2,9 @@ import json
 
 
 def get_names(name, house):
-        if house == "lower":
-            with open('MALower.json') as data_file:
-                data = json.load(data_file)
-        else:
+        with open('MALower.json') as data_file:
+            data = json.load(data_file)
+        if data == null:
             with open('MAUpper.json') as data_file:
                 data = json.load(data_file)
 
