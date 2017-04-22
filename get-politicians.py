@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 import jsontourl as geturl
 
 filter = "public health"
-
+name = "James Arciero"
+house = "lower"
 url = geturl.get_names(name, house)
 print(url)
 page = requests.get(url,verify=False)
